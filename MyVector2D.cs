@@ -13,11 +13,15 @@ public class MyVector2D
         y = yComponent;
     }
 
-    public void Draw()
+    public void Draw(Color color)
     {
-        Debug.DrawLine(new Vector2(0, 0), new Vector2(x, y));
+        Debug.DrawLine(new Vector2(0, 0), new Vector2(x, y), color);
     }
 
+    public void DrawWithOrigin(Vector2 origin)
+    {
+        Debug.DrawLine(origin, new Vector2(x, y));
+    }
 
     public override string ToString()
     {

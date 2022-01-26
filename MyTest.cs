@@ -24,10 +24,10 @@ public class MyTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        firstVector.Draw();
-        secondVector.Draw();
+        firstVector.Draw(Color.white);
+        secondVector.Draw(Color.white);
 
-        suma.Draw();
-        resta.Draw();
+        suma.Draw(Color.red);
+        resta.Draw(Color.red);
     }
 }
