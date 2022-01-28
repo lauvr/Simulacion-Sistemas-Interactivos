@@ -13,15 +13,8 @@ public class MyVector2D
         y = yComponent;
     }
 
-    public void Draw(Color color)
-    {
-        Debug.DrawLine(new Vector2(0, 0), new Vector2(x, y), color);
-    }
 
-    public void DrawWithOrigin(Vector2 origin)
-    {
-        Debug.DrawLine(origin, new Vector2(x, y));
-    }
+   
 
     public override string ToString()
     {
@@ -38,6 +31,35 @@ public class MyVector2D
     {
         MyVector2D result2 = new MyVector2D(x - vector.x, y - vector.y);
         return result2;
+    }
+
+    public MyVector2D multiplyScalar(float scalar)
+    {
+        MyVector2D result3 = new MyVector2D(x * scalar, y * scalar); 
+        return result3;
+    }
+
+    public float magnitud()
+    {
+        float result4 = Mathf.Sqrt((x * x) + (y*y));
+        return result4;
+    }
+
+    public MyVector2D normalizar()
+    {
+
+        MyVector2D result5 = new MyVector2D(x/ Mathf.Sqrt((x * x) + (y * y)), y/ Mathf.Sqrt((x * x) + (y * y)));
+        return result5;
+    }
+
+
+    public void Draw(Vector2 origin, Color color)
+    {
+        if (origin == null)
+        {
+            Debug.DrawLine(new Vector2(0, 0), new Vector2(x, y), color);
+        }
+        Debug.DrawLine(new Vector2(origin.x, origin.y), new Vector2(x+origin.x, y+origin.y), color);
     }
 
 }
